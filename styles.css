@@ -5,12 +5,37 @@ body {
 h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700; /* Negrito para cabeçalhos, por exemplo */
-}
-
-h1 {
     color: rgb(16, 15, 15);
     font-size: 250%;
     text-align: center;
+}
+
+/* Estilizando o formulário */
+#userForm {
+    display: none; /* Inicialmente oculto */
+    border: 1px solid #ccc; /* Borda ao redor do formulário */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilos para campos de entrada */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos para o botão de envio do formulário */
+#submitButton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#submitButton:hover {
+    background-color: #0056b3;
 }
 
 p {
