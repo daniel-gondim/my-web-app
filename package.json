@@ -2,7 +2,7 @@
   "name": "my-web-app",
   "version": "1.0.0",
   "description": "Projeto My Web APP para a disciplina de Verificação e Validação de Software",
-  "main": "script.js",
+  "main": "js/apps.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
