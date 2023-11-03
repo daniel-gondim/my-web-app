@@ -17,15 +17,6 @@ h1 {
     padding: 20px; /* Espaçamento interno */
 }
 
-/* Estilos para campos de entrada */
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-}
-
 /* Estilos para o botão de envio do formulário */
 #submitButton {
     background-color: #007bff;
@@ -46,14 +37,11 @@ p {
 
 #password-container {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 #username-container {
     text-align: center;
-}
-
-input {
-    width: 70%;
     margin-bottom: 10px;
 }
 
