@@ -1,12 +1,13 @@
 const express = require('express');
+const {join} = require("path");
 const app = express();
 const router = express.Router();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Olá, mundo!');
-});
-
+app.get('/index.html', (req, res) => {
+    const indexPath = join(__dirname, '../index.html');
+    res.sendFile(indexPath);
+})
 
 router.get('/', (req, res) => {
 
@@ -24,6 +25,6 @@ app.delete('/users/:id', (req, res) => {
     res.send(`Usuário com ID ${userId} excluído com sucesso.`);
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Servidor rodando na porta 3000');
 });
