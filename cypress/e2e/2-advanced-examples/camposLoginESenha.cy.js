@@ -15,18 +15,16 @@ context('Assertions', () => {
             fixture: 'seu-backend-dados.json'
         }).as('sua-rota-de_usuario');
 
-        // Visitar o seu aplicativo com a interceptação de solicitações configurada
-        // cy.visit(`http://localhost:${backendPort}/index.html`);
         cy.visit('http://localhost:3000/index.html');
 
     });
 
-    it('Seu teste Cypress', () => {
-        // Aguarde até que a solicitação seja interceptada
-        // cy.wait('@sua-rota-de_usuario');
+    it('Verifica presenção do campo senha', () => {
+        cy.get('#password-container #password').should('exist');
+    });
 
-        // Seu teste Cypress aqui
-        cy.get('loginForm').should('exist')
+    it('Verifica presenção do campo login', () => {
+        cy.get('#username-container #username').should('exist');
     });
 });
 
