@@ -2,7 +2,7 @@ function validarLogin() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const email = document.getElementById();
+    const email = "admin@gmail.com";
     const senha = "admin123";
 
     if (!username) {

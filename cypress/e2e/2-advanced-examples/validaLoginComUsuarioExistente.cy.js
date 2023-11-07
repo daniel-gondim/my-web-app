@@ -8,6 +8,21 @@
 
 const backendPort = 3000; // Defina a porta do seu backend
 
+
+describe('Fluxo de Autenticação', () => {
+    it('Deve permitir um login bem-sucedido', () => {
+        cy.visit('http://localhost:3000/index.html');
+
+        cy.get('#username-container #username').type('admin@gmail.com');
+        cy.get('#password-container #password').type('admin123');
+
+        // Clique no botão de login
+        cy.get('#button-container #loginButton').click();
+
+        // Verifique se o login foi bem-sucedido, por exemplo, redirecionando para uma página de boas-vindas
+        cy.url().should('eq', 'http://localhost:3000/login-sucess-page');
+    });
+
 describe('Validação de Login', () => {
     it('Deve exibir alerta se o campo usuário não estiver preenchido', () => {
         cy.visit('http://localhost:3000/index.html');
@@ -40,22 +55,22 @@ describe('Validação de Login', () => {
 
 
 
-context('Assertions', () => {
-    beforeEach(() => {
-        // Configurar interceptação de solicitações usando cy.intercept()
-        cy.intercept('GET', `/users`, {
-            fixture: 'seu-backend-dados.json'
-        }).as('sua-rota-de_usuario');
-
-        cy.visit('http://localhost:3000/index.html');
-
-    });
-
-    it('Deve permitir um login bem-sucedido', () => {
-        cy.get('#password-container #password').type('exist');
-    });
-
-    it('Verifica presenção do campo login', () => {
-        cy.get('#username-container #username').should('exist');
-    });
-});
+// context('Assertions', () => {
+//     beforeEach(() => {
+//         // Configurar interceptação de solicitações usando cy.intercept()
+//         cy.intercept('GET', `/users`, {
+//             fixture: 'seu-backend-dados.json'
+//         }).as('sua-rota-de_usuario');
+//
+//         cy.visit('http://localhost:3000/index.html');
+//
+//     });
+//
+//     it('Deve permitir um login bem-sucedido', () => {
+//         cy.get('#password-container #password').type('exist');
+//     });
+//
+//     it('Verifica presenção do campo login', () => {
+//         cy.get('#username-container #username').should('exist');
+//     });
+// });
