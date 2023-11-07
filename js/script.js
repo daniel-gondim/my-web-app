@@ -2,7 +2,7 @@ function validarLogin() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const email = "admin@gmail.com";
+    const email = document.getElementById();
     const senha = "admin123";
 
     if (!username) {
@@ -14,6 +14,6 @@ function validarLogin() {
     } else if (password !== senha) {
         window.alert('Senha incorreta. Favor conferir a senha e tentar novamente!');
     } else {
-        window.alert('O login foi realizado com sucesso!');
+        window.location.href = '../login-sucess-page.html';
     }
 }

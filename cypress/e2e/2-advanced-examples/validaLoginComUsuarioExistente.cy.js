@@ -8,6 +8,38 @@
 
 const backendPort = 3000; // Defina a porta do seu backend
 
+describe('Validação de Login', () => {
+    it('Deve exibir alerta se o campo usuário não estiver preenchido', () => {
+        cy.visit('http://localhost:3000/index.html');
+
+        // Clique no botão de login sem preencher os campos de usuário e senha
+        cy.get('#button-container #loginButton').click();
+
+        // Verifique se o alerta correto é exibido
+        cy.on('window:alert', (alertMessage) => {
+            expect(alertMessage).to.equal('O campo usuário tem que ser preenchido');
+        });
+    });
+
+    it('Deve exibir alerta se o campo senha não estiver preenchido', () => {
+        cy.visit('/pagina-de-login');
+
+        // Preencha o campo de usuário e clique no botão de login
+        cy.get('#username-container #username').type('seu-usuario');
+        cy.get('#button-container #loginButton').click();
+
+        // Verifique se o alerta correto é exibido
+        cy.on('window:alert', (alertMessage) => {
+            expect(alertMessage).to.equal('O campo senha tem que ser preenchido');
+        });
+    });
+
+});
+
+
+
+
+
 context('Assertions', () => {
     beforeEach(() => {
         // Configurar interceptação de solicitações usando cy.intercept()
