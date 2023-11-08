@@ -13,7 +13,7 @@ function validarLogin() {
         window.alert('Email incorreto. Favor tentar novamente.');
     } else if (password !== senha) {
         window.alert('Senha incorreta. Favor conferir a senha e tentar novamente!');
-    } else {
+    } else if (username == email && password == senha) {
         window.location.href = '../login-sucess-page.html';
     }
 }
